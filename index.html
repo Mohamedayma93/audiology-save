@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورقة تقييم سمعي</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            direction: rtl; /* لضبط اتجاه النص من اليمين لليسار */
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            font-weight: normal;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ورقة تقييم سمعي</h1>
+
+        <form id="audiologyForm">
+            <!-- معلومات المريض -->
+            <div class="section-title">معلومات المريض</div>
+            <div class="form-group">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">تاريخ الميلاد:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="age">العمر:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">الجنس:</label>
+                <select id="gender" name="gender" required>
+                    <option value="ذكر">ذكر</option>
+                    <option value="أنثى">أنثى</option>
+                    <option value="آخر">آخر</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="occupation">المهنة:</label>
+                <input type="text" id="occupation" name="occupation">
+            </div>
+            <div class="form-group">
+                <label for="phone">رقم الهاتف:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">العنوان:</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="form-group">
+                <label for="date_of_evaluation">تاريخ التقييم:</label>
+                <input type="date" id="date_of_evaluation" name="date_of_evaluation">
+            </div>
+
+            <!-- الشكوى الرئيسية -->
+            <div class="section-title">الشكوى الرئيسية</div>
+            <div class="form-group checkbox-group">
+                <label>الاهتمام الرئيسي:</label><br>
+                <input type="checkbox" id="hearing_loss" name="complaint" value="فقدان السمع">
+                <label for="hearing_loss">فقدان السمع</label><br>
+                <input type="checkbox" id="tinnitus" name="complaint" value="طنين الأذن">
+                <label for="tinnitus">طنين الأذن</label><br>
+                <input type="checkbox" id="dizziness" name="complaint" value="دوار/دوخة">
+                <label for="dizziness">دوار/دوخة</label><br>
+                <input type="checkbox" id="ear_pain" name="complaint" value="ألم الأذن">
+                <label for="ear_pain">ألم/انزعاج الأذن</label><br>
+                <input type="checkbox" id="ear_pressure" name="complaint" value="ضغط في الأذن">
+                <label for="ear_pressure">ضغط/امتلاء في الأذن</label><br>
+                <input type="checkbox" id="other" name="complaint" value="آخر">
+                <label for="other">آخر (حدد أدناه):</label>
+                <textarea id="other_specify" name="other_specify" rows="2" placeholder="يرجى التحديد"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="onset_of_symptoms">ظهور الأعراض:</label>
+                <select id="onset_of_symptoms" name="onset_of_symptoms">
+                    <option value="تدريجي">تدريجي</option>
+                    <option value="فجائي">فجائي</option>
+                    <option value="متقلب">متقلب</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="duration_of_symptoms">مدة الأعراض (بالشهور/السنوات):</label>
+                <input type="text" id="duration_of_symptoms" name="duration_of_symptoms">
+            </div>
+            <div class="form-group">
+                <label>الأذن المعنية:</label><br>
+                <input type="radio" id="right_ear" name="ear_involved" value="اليمين">
+                <label for="right_ear">اليمين</label>
+                <input type="radio" id="left_ear" name="ear_involved" value="اليسار">
+                <label for="left_ear">اليسار</label>
+                <input type="radio" id="both_ears" name="ear_involved" value="كلاهما">
+                <label for="both_ears">كلاهما</label>
+            </div>
+
+            <!-- تاريخ السمع -->
+            <div class="section-title">تاريخ السمع</div>
+            <div class="form-group radio-group">
+                <label>اختبارات السمع السابقة:</label><br>
+                <input type="radio" id="hearing_test_yes" name="hearing_test" value="نعم">
+                <label for="hearing_test_yes">نعم</label>
+                <input type="radio" id="hearing_test_no" name="hearing_test" value="لا">
+                <label for="hearing_test_no">لا</label>
+            </div>
+            <div class="form-group">
+                <label for="hearing_test_when">إذا كانت الإجابة بنعم، متى:</label>
+                <input type="text" id="hearing_test_when" name="hearing_test_when">
+            </div>
+            <div class="form-group">
+                <label for="hearing_test_where">أين:</label>
+                <input type="text" id="hearing_test_where" name="hearing_test_where">
+            </div>
+            <div class="form-group">
+                <label for="hearing_test_results">النتائج (إذا كانت معروفة):</label>
+                <textarea id="hearing_test_results" name="hearing_test_results" rows="2"></textarea>
+            </div>
+<!-- أجهزة السمع -->
+<div class="section-title">أجهزة السمع</div>
+<div class="form-group">
+    <label>أجهزة السمع:</label><br>
+    <input type="radio" id="hearing_aid_yes" name="hearing_aid" value="نعم">
+    <label for="hearing_aid_yes">نعم</label>
+    <input type="radio" id="hearing_aid_no" name="hearing_aid" value="لا">
+    <label for="hearing_aid_no">لا</label>
+</div>
+<div class="form-group checkbox-group">
+    <label>إذا كان نعم، أي أذن تستخدمها:</label><br>
+    <input type="checkbox" id="aid_right_ear" name="hearing_aid_ear" value="اليمين">
+    <label for="aid_right_ear">اليمين</label>
+    <input type="checkbox" id="aid_left_ear" name="hearing_aid_ear" value="اليسار">
+    <label for="aid_left_ear">اليسار</label>
+    <input type="checkbox" id="aid_both_ears" name="hearing_aid_ear" value="كلاهما">
+    <label for="aid_both_ears">كلاهما</label>
+</div>
+<div class="form-group">
+    <label for="hearing_aid_type">نوع أجهزة السمع:</label>
+    <input type="text" id="hearing_aid_type" name="hearing_aid_type">
+</div>
+<div class="form-group">
+    <label for="satisfaction_with_aid">مدى الرضا عن أجهزة السمع:</label>
+    <select id="satisfaction_with_aid" name="satisfaction_with_aid">
+        <option value="راضٍ تمامًا">راضٍ تمامًا</option>
+        <option value="راضٍ">راضٍ</option>
+        <option value="محايد">محايد</option>
+        <option value="غير راضٍ">غير راضٍ</option>
+        <option value="غير راضٍ تمامًا">غير راضٍ تمامًا</option>
+    </select>
+</div>
+
+            <!-- تاريخ الصحة السمعية -->
+            <div class="section-title">تاريخ الصحة السمعية والتاريخ الطبي</div>
+            <div class="form-group radio-group">
+                <label>العدوى الأذنية:</label><br>
+                <input type="radio" id="ear_infection_yes" name="ear_infection" value="نعم">
+                <label for="ear_infection_yes">نعم</label>
+                <input type="radio" id="ear_infection_no" name="ear_infection" value="لا">
+                <label for="ear_infection_no">لا</label><br>
+                <textarea id="ear_infection_detail" name="ear_infection_detail" rows="2" placeholder="إذا كانت الإجابة بنعم، يرجى التوضيح"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="allergies">الحساسية (إذا وجدت):</label>
+                <textarea id="allergies" name="allergies" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medical_conditions">الحالات الطبية الأخرى:</label>
+                <textarea id="medical_conditions" name="medical_conditions" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="medications">الأدوية الحالية:</label>
+                <textarea id="medications" name="medications" rows="2"></textarea>
+            </div>
+            <div class="form-group radio-group">
+                <label>تاريخ العائلة لفقدان السمع:</label><br>
+                <input type="radio" id="family_history_yes" name="family_history" value="نعم">
+                <label for="family_history_yes">نعم</label>
+                <input type="radio" id="family_history_no" name="family_history" value="لا">
+                <label for="family_history_no">لا</label><br>
+                <textarea id="family_history_detail" name="family_history_detail" rows="2" placeholder="إذا كانت الإجابة بنعم، يرجى التوضيح"></textarea>
+            </div>
+
+            <!-- ملاحظات إضافية -->
+            <div class="section-title">ملاحظات إضافية</div>
+            <div class="form-group">
+                <textarea id="additional_notes" name="additional_notes" rows="4" placeholder="أي معلومات أخرى"></textarea>
+            </div>
+
+            <!-- زر الإرسال -->
+            <button type="submit" class="submit-btn">إرسال</button>
+        </form>
+    </div>
+
+    <script>
+    document.getElementById('audiologyForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+        
+        // تجميع البيانات
+        const formData = new FormData(this);
+        let output = '';
+        formData.forEach((value, key) => {
+            output += `${key}: ${value}\n`;
+        });
+
+        // الحصول على اسم المريض
+        const patientName = document.getElementById('name').value || 'مريض'; // إذا لم يكن هناك اسم، استخدم "مريض"
+        
+        // إنشاء ملف نصي
+        const blob = new Blob([output], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${patientName}_تقييم_سمعي.txt`; // اسم الملف الجديد
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+    </script>
+</body>
+</html>
